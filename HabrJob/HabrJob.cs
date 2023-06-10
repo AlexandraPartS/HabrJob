@@ -2,18 +2,16 @@
 {
     public class HabrJob
     {
-        string uriId;
-        public string Title { get; set; }
+        string? uriId;
+        public string? Title { get; set; }
         public string Url
         {
-            get { return uriId; }
-            set
-            {
-                uriId = $"https://{Program.uri.Host}{value}";
-            }
+            get => uriId; 
+            set => uriId = $"https://{PageManager.uriHost}{value}";
         }
-        public string Company { get; set; }
-        public string Price { get; set; }
+        public string? Company { get; set; }
+        public string? Price { get; set; }
+
 
         public static string[] htmlXPath = {
             "//div[@class='vacancy-card']/div",
